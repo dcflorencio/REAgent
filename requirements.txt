@@ -22,3 +22,7 @@ tenacity
 tornado
 typing-extensions
 validators
+geopy
+folium
+streamlit-folium
+matplotlib
