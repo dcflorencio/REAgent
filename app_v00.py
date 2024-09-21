@@ -206,16 +206,18 @@ class TrackablePLANNER(ConversableAgent):
 class TrackableWRITER(ConversableAgent):
     def _process_received_message(self, message, sender, silent):
         with st.chat_message(sender.name):
-            st.markdown(message['content'])
+            st.markdown(message)
         return super()._process_received_message(message, sender, silent)
 
 user_input = st.chat_input(task)
+
+
 
 with st.container():
 
 
     if user_input:
-        
+
         user_proxy = TrackableUSER(
             name="Admin",
             system_message="Give the task, and send "
@@ -302,7 +304,7 @@ with st.container():
             },
         )
 
-        writer = TrackableWRITER(
+        writer = autogen.ConversableAgent(
             name="Writer",
             llm_config=llm_config,
             system_message="""Writer.
@@ -310,7 +312,6 @@ with st.container():
             The report should have the structure.
             Include a photo for each listing.
             include latitude and longitute.
-            And put the content in pseudo ```md``` code block.
             You take feedback from the user/admin and refine your report.
             Every time you generate a report, ALWAYS save it as a markdown file calling the save_markdown_file() function.
             Always ask the user/admin for feedback.
