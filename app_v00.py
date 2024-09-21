@@ -9,7 +9,6 @@ import http.client
 from typing import Any, Dict
 from pathlib import Path
 from typing import List, Any
-import agentops
 import streamlit as st
 import asyncio
 
@@ -18,10 +17,10 @@ load_dotenv()
 
 # Get the API key from the environment variable
 api_key = os.getenv("OPENAI_API_KEY")
-api_key_ops = os.getenv("AGENTOPS_API_KEY")
+
 rapidapi_key = os.getenv("RAPIDAPI_KEY")
 
-agentops.init(api_key=api_key_ops)
+
 
 
 # # Lesson 6: Planning and Stock Report Generation
@@ -194,20 +193,20 @@ st.write("""# REAL ESTATE FINDER""")
 class TrackableUSER(ConversableAgent):
     def _process_received_message(self, message, sender, silent):
         with st.chat_message(sender.name):
-            st.markdown(message)
+            st.markdown(message['content'])
         return super()._process_received_message(message, sender, silent)
 
 
 class TrackablePLANNER(ConversableAgent):
     def _process_received_message(self, message, sender, silent):
         with st.chat_message(sender.name):
-            st.markdown(message)
+            st.markdown(message['content'])
         return super()._process_received_message(message, sender, silent)
 
 class TrackableWRITER(ConversableAgent):
     def _process_received_message(self, message, sender, silent):
         with st.chat_message(sender.name):
-            st.markdown(message)
+            st.markdown(message['content'])
         return super()._process_received_message(message, sender, silent)
 
 user_input = st.chat_input(task)
@@ -310,6 +309,7 @@ with st.container():
             Please write a real estate report.
             The report should have the structure.
             Include a photo for each listing.
+            include latitude and longitute.
             And put the content in pseudo ```md``` code block.
             You take feedback from the user/admin and refine your report.
             Every time you generate a report, ALWAYS save it as a markdown file calling the save_markdown_file() function.
@@ -383,4 +383,3 @@ with st.container():
 
 print('loop outside')
 
-agentops.end_session("Success")
