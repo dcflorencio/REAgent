@@ -25,7 +25,6 @@ rapidapi_key = os.getenv("RAPIDAPI_KEY")
 
 
 
-# # Lesson 6: Planning and Stock Report Generation
 
 # ## Setup
 
@@ -292,7 +291,7 @@ with st.container():
             """
         )
 
-        # **Note**: In this lesson, you'll use an alternative method of code execution by providing a dict config. However, you can always use the LocalCommandLineCodeExecutor if you prefer. For more details about code_execution_config, check this: https://microsoft.github.io/autogen/docs/reference/agentchat/conversable_agent/#__init__
+       
 
         executor = autogen.ConversableAgent(
             name="Executor",
@@ -367,7 +366,7 @@ with st.container():
 
         # ## Start the group chat!
 
-        # <p style="background-color:#ECECEC; padding:15px; "> <b>Note:</b> In this lesson, you will use GPT 4 for better results. Please note that the lesson has a quota limit. If you want to explore the code in this lesson further, we recommend trying it locally with your own API key.
+       
 
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
