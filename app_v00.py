@@ -382,7 +382,7 @@ with st.container():
         
         loop.run_until_complete(initiate_chat())
         
-        print('loop after')
+        
 
-print('loop outside')
+print('what kind of home you want')
 
