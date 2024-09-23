@@ -63,7 +63,7 @@ Chat interface
 
 ![Chat](https://github.com/dcflorencio/REAgent/blob/main/SS1.JPG)
 
-![Chat](https://github.com/dcflorencio/REAgent/blob/main/SS2.JPG)
+![Chat](https://github.com/dcflorencio/REAgent/blob/main/SS3.JPG)
 
 Real Estate Report
 
