@@ -59,4 +59,12 @@ This project implements a multi-agent system for generating real estate reports 
 
 ## Screenshots
 
+Chat interface
+
+![Chat](https://github.com/dcflorencio/REAgent/blob/main/SS1.JPG)
+
+![Chat](https://github.com/dcflorencio/REAgent/blob/main/SS2.JPG)
+
+Real Estate Report
+
 ![Report Screenshot](https://github.com/dcflorencio/REAgent/blob/main/report.JPG)
